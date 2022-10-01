@@ -1,0 +1,89 @@
+:root{
+    --text-color: rgb(0, 45, 129);
+    --text-font-family: Arial, Helvetica, sans-serif;
+    --link-text-color: rgb(155, 187, 248);
+    --link-bg-color: rgb(63, 1, 1);
+    --link-bg-color-hover: rgb(150, 100, 100);
+    --correct-color: rgb(2, 129, 40);
+}
+
+body {
+    background: rgb(155,153,196);
+    background: linear-gradient(90deg, rgba(155,153,196,1) 0%, rgba(213,213,255,1) 36%, rgba(209,247,255,1) 100%);
+}
+
+.header {
+    color: var(--text-color);
+    font-family: var(--text-font-family);
+    font-size: 500%;
+    font-weight: 900;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.btn {
+    color: var(--link-text-color);
+    background-color: var(--link-bg-color);
+    font-family: var(--text-font-family);
+    font-size: 300%;
+    text-decoration: none;
+    text-align: center;
+    width: 15%;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: outset;
+    border-color: black;
+}
+
+.btn:hover {
+    background-color: var(--link-bg-color-hover);
+}
+
+.column {
+    flex-direction: column;
+}
+
+.levelText {
+    font-size: 300%;
+    font-weight: 300;
+    width: 50%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.correct {
+    color: var(--correct-color);
+}
+
+.displayNone {
+    display: none;
+}
+
+.hiddenInput {
+    position: absolute;
+    z-index: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    margin: 0 0;
+    padding: 0 0;
+    border-width: 0;
+    overflow: hidden;
+}
+
+.timer {
+    font-size: 200%;
+    font-weight: 200%;
+    font-style: italic;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

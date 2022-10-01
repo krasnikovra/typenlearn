@@ -1,0 +1,6 @@
+**__pycache__
+node_modules
+**main.js
+**package-lock.json
+venv
+*.sqlite3
