@@ -6,25 +6,17 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { HomePage } from './HomePage';
-import { Game } from './Game';
+import HomePage from './HomePage';
+import GameModePicker from './GameModePicker';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <Routes>
-          <Route path='/' element={ <HomePage /> } />
-          <Route path='/game' element={<Game />} />
-      </Routes>
-    );
-  }
+export default function App(props) {
+  return (
+    <Routes>
+      <Route exact path='/' element={<HomePage />} />
+      <Route path='/game/*' element={<GameModePicker />} />
+    </Routes>
+  );
 }
-
-export default App;
 
 const container = document.getElementById("root");
 const root = createRoot(container);

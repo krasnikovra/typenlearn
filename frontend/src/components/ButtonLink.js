@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './app.module.css';
+import { useNavigate } from 'react-router-dom';
+import Button from './Button';
 
-export class ButtonLink extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default function ButtonLink(props) {
+  const navigate = useNavigate();
 
-  render() {
-    return (
-      <Link to={this.props.to} className={styles.btn}>{this.props.text}</Link>
-    );
-  }
+  return (
+    <Button onClick={() => navigate(props.to)}
+            text={props.text} />
+  );
 }

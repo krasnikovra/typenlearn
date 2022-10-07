@@ -55,7 +55,7 @@ export class LevelText extends React.Component {
     return (
       <div className={styles.levelText}>
         <em className={styles.correct}
-          ref={e => this.emCorrect = e}>  
+          ref={e => this.emCorrect = e}>
         </em>
         <em ref={e => this.em = e}>
           {this.props.text}

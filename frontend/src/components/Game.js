@@ -1,79 +1,13 @@
-import React from 'react';
-import styles from './app.module.css';
+import React from "react";
+import { Route, Routes }
+  from "react-router-dom";
+import { GameText } from "./GameText";
 
-import { LevelText } from './LevelText';
-import { SecretInput } from './SecretInput';
-import { Button } from './Button'
-import { timeFormat, Timer } from './Timer';
-
-export class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {},
-      loaded: false,
-      placeholder: "Loading...",
-    }
-  }
-
-  componentDidMount() {
-    console.log('[Game]: fetching text from api...');
-    const text = "Lorem ipsum dolor.";
-    console.log(text);
-    console.log("[Game]: Text fethced successfully.");
-    this.setState(() => {
-      console.log("[Game]: Loading complete.");
-      return {
-        data: {
-          text: text,
-        },
-        loaded: true,
-        placeholder: "Loading complete."
-      };
-    });
-
-    this.startButton.setOnClick(ev =>{
-      this.secretInput.bindLevelText(this.levelText);
-      this.startButton.hide();
-      this.timer.start();
-      this.setState(() => {
-        console.log("[Game]: Game started!");
-        return {
-          ...this.state,
-          placeholder: "Game started!",
-        }
-      })
-    });
-
-    this.levelText.setOnComplete(ev => {
-      const timeMs = this.timer.stop();
-      this.levelText.refresh();
-      this.startButton.unhide();
-      this.secretInput.unbindLevelText();
-      // TODO: push timeMs to the database and check if
-      // it is a new record
-      this.setState(() => {
-        console.log(`[Game]: Game over! Your time is: ${timeFormat(timeMs)}`);
-        return {
-          ...this.state,
-          placeholder: "Game over!",
-        }
-      });
-    });
-  }
-
-  render() {
-    return(
-      <div className={`${styles.center} ${styles.column}`}>
-        <SecretInput ref={e => this.secretInput = e}/>
-        <LevelText text={this.state.data.text}
-                   ref={e => this.levelText = e} />
-        <Timer text="Your time:"
-               ref={e => this.timer = e} />
-        <Button text="Start!"
-                onclick={this.__onStartButtonClick}
-                ref={e => this.startButton = e} />
-      </div>
-    );
-  }
+export default function Game(props) {
+  return (
+    <Routes>
+      <Route path={"text"}
+        element={<GameText />} />
+    </Routes>
+  );
 }

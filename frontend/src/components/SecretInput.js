@@ -9,7 +9,7 @@ export class SecretInput extends React.Component {
   }
 
   __setUpInput() {
-    this.secretInput.onfocus = ev => {};
+    this.secretInput.onfocus = ev => { };
     this.secretInput.onblur = ev => ev.target.focus();
     this.secretInput.oninput = ev => {
       console.log(`[SecretInput]: pressed ${ev.target.value[0]}`);
@@ -21,9 +21,9 @@ export class SecretInput extends React.Component {
   }
 
   __detachInput() {
-    this.secretInput.onblur = ev => {};
+    this.secretInput.onblur = ev => { };
     this.secretInput.onfocus = ev => ev.target.blur();
-    this.secretInput.oninput = ev => {};
+    this.secretInput.oninput = ev => { };
     this.secretInput.blur();
   }
 
@@ -47,8 +47,8 @@ export class SecretInput extends React.Component {
   render() {
     return (
       <input type="text"
-             className={styles.hiddenInput}
-             ref={e => this.secretInput = e}>
+        className={styles.hiddenInput}
+        ref={e => this.secretInput = e}>
       </input>
     );
   }

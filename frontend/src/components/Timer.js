@@ -43,9 +43,9 @@ export class Timer extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div className={styles.timer}>
-        {this.props.text} <em ref={e => this.em = e}></em>
+        {this.props.text}<em ref={e => this.em = e}></em>
       </div>
     );
   }
