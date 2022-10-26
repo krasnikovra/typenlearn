@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes }
   from "react-router-dom";
-import { GameText } from "./GameText";
+import GameText from "./GameText";
 
 export default function Game(props) {
   return (

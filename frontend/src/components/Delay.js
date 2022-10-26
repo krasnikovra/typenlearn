@@ -15,13 +15,13 @@ export class Delay extends React.Component {
   }
 
   run() {
-    this.div.classList.remove(styles.displayNone);
+    this.div.classList.remove(styles.hidden);
     this.div.innerHTML = this.props.text + this.state.secondsLeft;
     const interval = setInterval(() => {
       this.state.secondsLeft--;
       if (this.state.secondsLeft < 1) {
         this.state.secondsLeft = this.props.seconds;
-        this.div.classList.add(styles.displayNone);
+        this.div.classList.add(styles.hidden);
         this.div.innerHTML = "";
         this.state.action();
         clearInterval(interval);
@@ -31,12 +31,12 @@ export class Delay extends React.Component {
   }
 
   componentDidMount() {
-    this.div.classList.add(styles.displayNone);
+    this.div.classList.add(styles.hidden);
   }
 
   render() {
     return ( 
-      <div className={styles.delay} ref={e => this.div = e}></div>
+      <div className={styles.delay} ref={e => this.div = e}>{this.props.text + this.state.secondsLeft}</div>
     );
   }
 }

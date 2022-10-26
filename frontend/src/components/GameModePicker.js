@@ -9,21 +9,21 @@ export default function GameModePicker(props) {
     <Routes>
       <Route exact path={"/"} element={
         <div className={styles.center}>
-          <GameModeCard to={"game/text"}
+          <GameModeCard to={"text"}
             title={"Text"}
             desc={"A simple text mode which allows you to\
                   keep your typing speed good or even increase it.\
                   You will see a text which you should type as fast\
                   as you can after clicking 'Start!' button."} />
-          <GameModeCard to={"game/text"}
+          <GameModeCard to={"text"}
             title={"Game mode"}
             desc={"Some game mode"} />
-          <GameModeCard to={"game/text"}
+          <GameModeCard to={"text"}
             title={"Game mode"}
             desc={"Some game mode"} />
         </div>
       } />
-      <Route path={"game/*"} element={<Game />} />
+      <Route path={"/*"} element={<Game />} />
     </Routes>
   );
 }

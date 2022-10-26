@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     align-self: center;
+    height: 80vh;
 }
 
 .btn {
@@ -67,6 +68,10 @@ body {
 
 .displayNone {
     display: none;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .hiddenInput {

@@ -7,7 +7,7 @@ import Button from './Button'
 import { timeFormat, Timer } from './Timer';
 import { Delay } from './Delay';
 
-export class GameText extends React.Component {
+export default class GameText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
