@@ -4,7 +4,7 @@ const getTextsRequest = (gameModeId) => {
   const url = `${settings.apiURL}gamemode/${gameModeId}/text/`
   const opt = {
     method: "GET",
-    headers: settings.headers(localStorage.getItem('jwt_token')),
+    headers: settings.headers(),
   }
 
   return {
