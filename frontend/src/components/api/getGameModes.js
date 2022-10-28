@@ -1,7 +1,7 @@
 import settings from "./settings"
 
-const getUserRequest = () => {
-  const url = `${settings.apiURL}${settings.auth}user/`
+const getGameModesRequest = () => {
+  const url = `${settings.apiURL}gamemode/`
   const opt = {
     method: "GET",
     headers: settings.headers(),
@@ -13,4 +13,4 @@ const getUserRequest = () => {
   }
 }
 
-export default getUserRequest;
+export default getGameModesRequest;

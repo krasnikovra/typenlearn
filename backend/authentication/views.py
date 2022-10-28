@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 
 from .serializers import *
 from .renderers import *
-from .permissions import *
+from typenlearn.permissions import *
 
 class RegistrationAPIView(APIView):
     """

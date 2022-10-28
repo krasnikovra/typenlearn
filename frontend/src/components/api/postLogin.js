@@ -1,18 +1,16 @@
+import settings from "./settings"
+
 const postLoginRequest = (username, password) => {
-  const url = "http://127.0.0.1:8000/api/v1/auth/login/"
+  const url = `${settings.apiURL}${settings.auth}login/`
   const body = {
     user: {
       username: username,
       password: password,
     }
   }
-  const headers = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
   const opt = {
     method: "POST",
-    headers: headers,
+    headers: settings.headers(),
     body: JSON.stringify(body),
   }
 

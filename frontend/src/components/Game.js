@@ -7,7 +7,7 @@ export default function Game(props) {
   return (
     <Routes>
       <Route path={"text"}
-        element={<GameText />} />
+        element={<GameText link="text" />} />
     </Routes>
   );
 }
