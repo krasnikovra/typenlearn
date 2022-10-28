@@ -1,8 +1,4 @@
-from ast import Is
-from logging import raiseExceptions
-from telnetlib import GA
 from django.http import Http404
-from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,7 +6,6 @@ from rest_framework import status, viewsets
 from rest_framework.permissions import AllowAny
 from .serializers import *
 from .renderers import *
-from typenlearn.permissions import IsAuthenticatedOrCorsPreflight
 
 class GenericAPIView(APIView):
     def serializer(self, *args, **kwargs):
