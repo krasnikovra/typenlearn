@@ -1,0 +1,26 @@
+[
+  {
+    "model": "api.Text",
+    "pk": 1,
+    "fields": {
+      "text": "Lorem ipsum dolor.",
+      "gamemode_id": 1
+    }
+  },
+  {
+    "model": "api.Text",
+    "pk": 2,
+    "fields": {
+      "text": "Some cool text.",
+      "gamemode_id": 1
+    }
+  },
+  {
+    "model": "api.Text",
+    "pk": 3,
+    "fields": {
+      "text": "Other sneaky text.",
+      "gamemode_id": 1
+    }
+  }
+]

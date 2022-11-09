@@ -2,9 +2,13 @@ import settings from "./settings"
 
 const getGameModesRequest = () => {
   const url = `${settings.apiURL}gamemode/`
+  const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }
   const opt = {
     method: "GET",
-    headers: settings.headers(),
+    headers: headers,
   }
 
   return {

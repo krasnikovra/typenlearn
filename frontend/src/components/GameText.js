@@ -15,7 +15,7 @@ export default class GameText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gameModeId: 0,
+      gameModeId: 1,
       link: props.link,
       data: {
         texts: undefined,

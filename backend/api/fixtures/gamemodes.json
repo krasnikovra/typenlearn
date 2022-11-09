@@ -1,0 +1,11 @@
+[
+  {
+    "model": "api.GameMode",
+    "pk": 1,
+    "fields": {
+      "title": "Text",
+      "desc": "A simple text mode which allows you to keep your typing speed good or even increase it. You will see a text which you should type as fast as you can after clicking 'Start!' button.",
+      "link": "text"
+    }
+  }
+]
