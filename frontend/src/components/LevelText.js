@@ -33,7 +33,7 @@ export class LevelText extends React.Component {
     this.emCorrect.textContent += this.props.text[this.state.correctCharsCount - 1] !== ' ' ?
       this.props.text[this.state.correctCharsCount - 1] : '·';
     this.em.textContent = this.props.text.slice(this.state.correctCharsCount);
-    if (this.state.correctCharsCount == this.props.text.length) {
+    if (this.state.correctCharsCount === this.props.text.length) {
       this.setState(() => {
         console.log("[LevelText]: the text is complete!")
         return {

@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     align-self: center;
+    height: 80vh;
 }
 
 .btn {
@@ -36,8 +37,9 @@ body {
     font-size: 300%;
     text-decoration: none;
     text-align: center;
-    width: 15%;
+    width: auto;
     padding: 1rem 1rem;
+    margin: 1rem 1rem;
     border-radius: 1rem;
     border-width: 2px;
     border-style: outset;
@@ -67,6 +69,10 @@ body {
 
 .displayNone {
     display: none;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .hiddenInput {
@@ -120,4 +126,8 @@ body {
 .cardDesc {
     font-size: 150%;
     text-align: justify;
+}
+
+.record {
+    font-size: 150%;
 }

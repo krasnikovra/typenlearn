@@ -1,14 +1,7 @@
 import React from "react";
 import styles from './app.module.css';
 
-const zeroPad = (num, places) => String(num).padStart(places, '0')
-
-export const timeFormat = (milliseconds) => {
-  return `${zeroPad(Math.floor(milliseconds / 1000 / 60) % 60, 2)}:
-          ${zeroPad(Math.floor(milliseconds / 1000) % 60, 2)}.
-          ${zeroPad(Math.floor(milliseconds) % 1000, 3)}
-  `.replace(/\s+/g, '');;
-}
+import Utils from "./utils";
 
 export class Timer extends React.Component {
   constructor(props) {
@@ -29,7 +22,7 @@ export class Timer extends React.Component {
     const start = this.state.startedTimestamp;
     this.state.intervalId = setInterval(() => {
       const now = new Date();
-      this.em.textContent = timeFormat(now - start);
+      this.em.textContent = Utils.timeFormat(now - start);
     });
   }
 
