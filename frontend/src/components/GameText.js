@@ -156,7 +156,8 @@ export default class GameText extends React.Component {
   render() {
     return (
       <div className={`${styles.center} ${styles.column}`}>
-        <SecretInput ref={e => this.secretInput = e} />
+        <SecretInput ref={e => this.secretInput = e}
+          onMistake={() => this.timer.increment(1000)} />
         <LevelText text={this.state.data.texts !== undefined ? this.state.data.texts[this.state.data.currentTextIndex].text : ""}
           ref={e => this.levelText = e} />
         <Timer text="Your time: "

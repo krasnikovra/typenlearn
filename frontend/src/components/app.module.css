@@ -5,6 +5,7 @@
     --link-bg-color: rgb(63, 1, 1);
     --link-bg-color-hover: rgb(150, 100, 100);
     --correct-color: rgb(2, 129, 40);
+    --error-color: rgb(100, 0, 0);
     --delay-text-color: rgb(100, 0, 0);
 }
 
@@ -130,4 +131,10 @@ body {
 
 .record {
     font-size: 150%;
+}
+
+.errorTimer {
+    color: var(--error-color);
+    scale: 125%;
+    font-weight: bold;
 }
