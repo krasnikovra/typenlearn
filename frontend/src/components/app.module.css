@@ -58,14 +58,19 @@ body {
 .levelText {
     font-size: 300%;
     font-weight: 300;
-    width: 50%;
+    width: 90%;
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
 }
 
 .correct {
+    display: inline;
     color: var(--correct-color);
+}
+
+.default {
+    display: inline;
 }
 
 .displayNone {

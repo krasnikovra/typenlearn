@@ -30,9 +30,9 @@ export class LevelText extends React.Component {
     if (char !== this.props.text[this.state.correctCharsCount])
       return false;
     this.state.correctCharsCount++;
-    this.emCorrect.textContent += this.props.text[this.state.correctCharsCount - 1] !== ' ' ?
-      this.props.text[this.state.correctCharsCount - 1] : '·';
-    this.em.textContent = this.props.text.slice(this.state.correctCharsCount);
+    this.emCorrect.innerHTML += this.props.text[this.state.correctCharsCount - 1] !== ' ' ?
+      this.props.text[this.state.correctCharsCount - 1] : '·<wbr>';
+    this.em.innerHTML = this.props.text.slice(this.state.correctCharsCount);
     if (this.state.correctCharsCount === this.props.text.length) {
       this.setState(() => {
         console.log("[LevelText]: the text is complete!")
@@ -54,12 +54,13 @@ export class LevelText extends React.Component {
   render() {
     return (
       <div className={styles.levelText}>
-        <em className={styles.correct}
+        <div className={styles.correct}
           ref={e => this.emCorrect = e}>
-        </em>
-        <em ref={e => this.em = e}>
+        </div>
+        <div className={styles.default} 
+          ref={e => this.em = e}>
           {this.props.text}
-        </em>
+        </div>
       </div>
     );
   }
