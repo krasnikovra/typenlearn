@@ -16,6 +16,8 @@ export class SecretInput extends React.Component {
       const isCorrect = this.levelText.testCharacter(ev.target.value[0]);
       console.log(`[SecretInput]: input is ${isCorrect ? "correct" : "bad"}`);
       ev.target.value = "";
+      
+      isCorrect ? this.props.onCorrect?.() : this.props.onMistake?.()
     }
     this.secretInput.focus();
   }

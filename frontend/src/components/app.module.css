@@ -5,8 +5,10 @@
     --link-bg-color: rgb(63, 1, 1);
     --link-bg-color-hover: rgb(150, 100, 100);
     --correct-color: rgb(2, 129, 40);
+    --error-color: rgb(100, 0, 0);
     --delay-text-color: rgb(100, 0, 0);
     --text-grad-color: linear-gradient(90deg, rgb(63, 1, 1) 0%, rgb(150, 100, 100) 100%);
+    --secondary-color: rgb(150, 150, 150);
 }
 
 body {
@@ -39,15 +41,49 @@ body {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 300%;
     font-weight: 300;
-    width: 50%;
+    width: 90%;
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
 }
 
+.levelTextSecondaryLeft {
+    font-size: 300%;
+    font-weight: 300;
+    width: 90%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: right;
+    scale: 75%;
+    color: var(--secondary-color);
+    min-width: 25vh;
+}
+
+.levelTextSecondaryRight {
+    font-size: 300%;
+    font-weight: 300;
+    width: 90%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    scale: 75%;
+    color: var(--secondary-color);
+    min-width: 25vh;
+}
+
+.wordByWordContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .correct {
+    display: inline;
     color: var(--correct-color);
     //color: #379683;
+}
+
+.default {
+    display: inline;
 }
 
 .displayNone {
@@ -193,4 +229,10 @@ input::placeholder {
     top: 3%;
     left: 3%;
     font-size: 120%;
+}
+
+.errorTimer {
+    color: var(--error-color);
+    scale: 125%;
+    font-weight: bold;
 }
