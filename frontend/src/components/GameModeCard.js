@@ -13,7 +13,7 @@ export default function GameModeCard(props) {
     <div className={styles.gameModeCard} onClick={onClick}>
       <div className={styles.cardHeader}>{props.title}</div>
       <div className={styles.cardDesc}>{props.desc}</div>
-      <img src={props.img} />
     </div>
+    //<img src={props.img} alt="oops"/>
   );
 }

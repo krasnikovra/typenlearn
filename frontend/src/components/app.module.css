@@ -6,11 +6,11 @@
     --link-bg-color-hover: rgb(150, 100, 100);
     --correct-color: rgb(2, 129, 40);
     --delay-text-color: rgb(100, 0, 0);
+    --text-grad-color: linear-gradient(90deg, rgb(63, 1, 1) 0%, rgb(150, 100, 100) 100%);
 }
 
 body {
-    background: rgb(155, 153, 196);
-    background: linear-gradient(90deg, rgba(155, 153, 196, 1) 0%, rgba(213, 213, 255, 1) 36%, rgba(209, 247, 255, 1) 100%);
+    background: #5CDB95;
 }
 
 .header {
@@ -30,31 +30,13 @@ body {
     height: 80vh;
 }
 
-.btn {
-    color: var(--link-text-color);
-    background-color: var(--link-bg-color);
-    font-family: var(--text-font-family);
-    font-size: 300%;
-    text-decoration: none;
-    text-align: center;
-    width: auto;
-    padding: 1rem 1rem;
-    margin: 1rem 1rem;
-    border-radius: 1rem;
-    border-width: 2px;
-    border-style: outset;
-    border-color: black;
-}
-
-.btn:hover {
-    background-color: var(--link-bg-color-hover);
-}
-
 .column {
     flex-direction: column;
 }
 
 .levelText {
+    color: #EDF5E1;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 300%;
     font-weight: 300;
     width: 50%;
@@ -65,6 +47,7 @@ body {
 
 .correct {
     color: var(--correct-color);
+    //color: #379683;
 }
 
 .displayNone {
@@ -88,6 +71,7 @@ body {
 }
 
 .timer {
+    color: #379683;
     font-size: 200%;
     font-weight: 200;
     font-style: italic;
@@ -96,7 +80,8 @@ body {
 }
 
 .delay {
-    color: var(--delay-text-color);
+    color: #05386B;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 300%;
     font-weight: 500;
 }
@@ -106,11 +91,10 @@ body {
     flex-direction: column;
     width: 30%;
     margin: 3rem 1rem;
-    padding: 2rem 2rem;
-    border-radius: 1rem;
-    border-width: 2px;
-    border-style: outset;
-    border-color: black;
+    padding: 2rem 1rem;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #EDF5E1;
 }
 
 .gameModeCard:hover {
@@ -118,16 +102,95 @@ body {
 }
 
 .cardHeader {
-    font-size: 200%;
+    color: #EDF5E1;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 500%;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .cardDesc {
-    font-size: 150%;
+    color: #05386B;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 130%;
     text-align: justify;
 }
 
 .record {
+    color: #EDF5E1;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 150%;
+     text-align: center
+}
+
+.mainText {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: #EDF5E1;
+    font-size: 500%;
+    margin: 0.2em;
+}
+
+.btn {
+    margin: 1em;
+    color: #EDF5E1;
+    background-color: #05386B;
+    font-size: 175%;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+    padding: 0.60rem 0.60rem;
+    border-width: 0px;
+    transition: all 500ms ease;
+}
+
+.btn:hover {
+    color: #05386B;
+    background-color: #EDF5E1;
+    cursor: pointer;
+}
+
+.input {
+    color: #8EE4AF;
+    text: #FF0000;
+    font-size: 200%;
+    background-color: #379683;
+    border-width: 0px;
+}
+
+input::placeholder {
+
+    opacity: .5;
+    color: #8EE4AF;
+}
+
+.imgHome {
+    position: absolute;
+    bottom: 0%;
+    left: 65%;
+    width: 34%;
+    height: auto;
+}
+
+.imgLogin {
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+    width: 27%;
+    height: auto;
+}
+
+.errText {
+    color: #05386B;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 100%;
+    margin-top: 0.3em;
+}
+
+.logo {
+    color: #5CDB95;
+    background-color: #5CDB95;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    font-size: 120%;
 }

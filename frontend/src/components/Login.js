@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './app.module.css'
+import ButtonLink from './ButtonLink';
 
 import postLoginRequest from './api/postLogin'
 
@@ -73,18 +74,24 @@ export default function Login(props) {
 
   return (
     <form>
+      <ButtonLink to='/' text="Type'n'learn" />
+
       <div className={`${styles.center} ${styles.column}`}>
-        <label htmlFor="username"><b>Username</b></label>
-        <input type="text" name="username" placeholder="Username" onChange={handleValueChange("username")} />
-        {values.usernameErrors !== null && values.usernameErrors.map((err, idx) => <span key={idx}>{err}</span>)}
+        <label className={`${styles.mainText}`} htmlFor="username"><b>Username</b></label>
+        <input className={`${styles.input}`} type="text" name="username"  placeholder="Username" onChange={handleValueChange("username")} />
+        {values.usernameErrors !== null && values.usernameErrors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}
 
-        <label htmlFor="password"><b>Password</b></label>
-        <input type="password" name="password" placeholder="Password" onChange={handleValueChange("password")} />
+        <label className={`${styles.mainText}`} htmlFor="password"><b>Password</b></label>
+        <input className={`${styles.input}`} type="password"  name="password" placeholder="Password" onChange={handleValueChange("password")} />
         {values.passwordErrors !== null &&
-          values.passwordErrors.map((err, idx) => <span key={idx}> {err} </span>)}
+          values.passwordErrors.map((err, idx) => <span className={`${styles.errText}`} key={idx}> {err} </span>)}
 
-        <button onClick={handleButtonClick} disabled={loading}>Login</button>
-        {values.errors !== null && values.errors.map((err, idx) => <span key={idx}>{err}</span>)}
+        <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={loading}>Login</button>
+        {values.errors !== null && values.errors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}
+
+         <p>
+         <img className={`${styles.imgLogin}`} src="https://i.pinimg.com/564x/27/7a/fc/277afc2e1fb0a00d579186e3082464a5.jpg" alt="oops"></img>
+         </p>
       </div>
     </form>
   )
