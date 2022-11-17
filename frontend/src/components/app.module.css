@@ -7,6 +7,7 @@
     --correct-color: rgb(2, 129, 40);
     --error-color: rgb(100, 0, 0);
     --delay-text-color: rgb(100, 0, 0);
+    --secondary-color: rgb(150, 150, 150);
 }
 
 body {
@@ -62,6 +63,35 @@ body {
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
+}
+
+.levelTextSecondaryLeft {
+    font-size: 300%;
+    font-weight: 300;
+    width: 90%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: right;
+    scale: 75%;
+    color: var(--secondary-color);
+    min-width: 25vh;
+}
+
+.levelTextSecondaryRight {
+    font-size: 300%;
+    font-weight: 300;
+    width: 90%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    scale: 75%;
+    color: var(--secondary-color);
+    min-width: 25vh;
+}
+
+.wordByWordContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .correct {
