@@ -7,5 +7,14 @@
       "desc": "A simple text mode which allows you to keep your typing speed good or even increase it. You will see a text which you should type as fast as you can after clicking 'Start!' button.",
       "link": "text"
     }
+  },
+  {
+    "model": "api.GameMode",
+    "pk": 2,
+    "fields": {
+      "title": "Word-by-word",
+      "desc": "A game mode in which the text is being typed word-by-word making user not able to memorize all the text and type it while looking on keyboard.",
+      "link": "word-by-word"
+    }
   }
 ]

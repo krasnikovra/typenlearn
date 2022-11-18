@@ -22,5 +22,13 @@
       "text": "Other sneaky text.",
       "gamemode_id": 1
     }
+  },
+  {
+    "model": "api.Text",
+    "pk": 4,
+    "fields": {
+      "text": "Here is a text you need to write word by word.",
+      "gamemode_id": 2
+    }
   }
 ]
