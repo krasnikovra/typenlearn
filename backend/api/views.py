@@ -30,8 +30,6 @@ class RecordView(GenericAPIView):
             }, status=status.HTTP_200_OK)
 
         data = request.data.get('record', {})
-        
-        print(data)
 
         serializer = self.serializer(data=data)
         serializer.is_valid(raise_exception=True)

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './app.module.css';
 
-import { LevelText } from './LevelText';
 import { SecretInput } from './SecretInput';
 import Button from './Button'
 import { Timer } from './Timer';
@@ -10,12 +9,13 @@ import { Delay } from './Delay';
 import getTextsRequest from './api/getTexts';
 import postRecordRequest from './api/postRecord';
 import Utils from './utils';
+import LevelWordByWord from './LevelWordByWord';
 
-export default class GameText extends React.Component {
+export default class GameWordByWord extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gameModeId: 1,
+      gameModeId: 2,
       link: props.link,
       data: {
         texts: undefined,
@@ -158,7 +158,7 @@ export default class GameText extends React.Component {
       <div className={`${styles.center} ${styles.column}`}>
         <SecretInput ref={e => this.secretInput = e}
           onMistake={() => this.timer.increment(1000)} />
-        <LevelText text={this.state.data.texts !== undefined ? this.state.data.texts[this.state.data.currentTextIndex].text : ""}
+        <LevelWordByWord text={this.state.data.texts !== undefined ? this.state.data.texts[this.state.data.currentTextIndex].text : ""}
           ref={e => this.levelText = e} />
         <Timer text="Your time: "
           ref={e => this.timer = e} />

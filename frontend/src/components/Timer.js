@@ -9,6 +9,7 @@ export class Timer extends React.Component {
     this.state = {
       startedTimestamp: undefined,
       intervalId: undefined,
+      extraMs: 0,
     };
   }
 
@@ -22,17 +23,24 @@ export class Timer extends React.Component {
     const start = this.state.startedTimestamp;
     this.state.intervalId = setInterval(() => {
       const now = new Date();
-      this.em.textContent = Utils.timeFormat(now - start);
+      this.em.textContent = Utils.timeFormat(now - start + this.state.extraMs);
     });
   }
 
   stop() {
     clearInterval(this.state.intervalId);
-    const res = new Date() - this.state.startedTimestamp;
+    const res = new Date() - this.state.startedTimestamp + this.state.extraMs;
     console.log('[Timer]: timer stopped');
     this.state.startedTimestamp = undefined;
     this.state.intervalId = undefined;
+    this.state.extraMs = 0;
     return res;
+  }
+
+  increment(extraMs) {
+    this.state.extraMs += extraMs;
+    this.em.classList.add(styles.errorTimer);
+    setTimeout(() => this.em.classList.remove(styles.errorTimer), 250)
   }
 
   render() {
