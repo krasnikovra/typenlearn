@@ -218,26 +218,26 @@ export default function Register(props) {
   return (
     <form>
       <div className={`${styles.center} ${styles.column}`}>
-        <label htmlFor="username"><b>Username</b></label>
-        <input type="text" name="username" placeholder="Username" onChange={handleValueChange("username")} />
+        <label htmlFor="username" className={`${styles.mainText}`}><b>Username</b></label>
+        <input className={`${styles.input}`} type="text" name="username" placeholder="Username" onChange={handleValueChange("username")} />
         {errors.usernameErrors.map((err, idx) => <span key={idx}>{err}</span>)}
         {networkErrors.usernameErrors.map((err, idx) => <span key={idx}>{err}</span>)}
 
-        <label htmlFor="email"><b>Email</b></label>
-        <input type="text" name="email" placeholder="example@gmail.com" onChange={handleValueChange("email")} />
+        <label htmlFor="email" className={`${styles.mainText}`}><b>Email</b></label>
+        <input className={`${styles.input}`} type="text" name="email" placeholder="example@gmail.com" onChange={handleValueChange("email")} />
         {errors.emailErrors.map((err, idx) => <span key={idx}>{err}</span>)}
         {networkErrors.emailErrors.map((err, idx) => <span key={idx}>{err}</span>)}
 
-        <label htmlFor="password"><b>Password</b></label>
-        <input type="password" name="password" placeholder="&ExaMplE123+" onChange={handleValueChange("password")} />
+        <label htmlFor="password" className={`${styles.mainText}`}><b>Password</b></label>
+        <input className={`${styles.input}`} type="password" name="password" placeholder="&ExaMplE123+" onChange={handleValueChange("password")} />
         {errors.passwordErrors.map((err, idx) => <span key={idx}> {err} </span>)}
         {networkErrors.passwordErrors.map((err, idx) => <span key={idx}> {err} </span>)}
 
-        <label htmlFor="password-repeat"><b>Password</b></label>
-        <input type="password" name="password-repeat" placeholder="&ExaMplE123+" onChange={handleValueChange("passwordRepeat")} />
+        <label htmlFor="password-repeat" className={`${styles.mainText}`}><b>Repeat Password</b></label>
+        <input className={`${styles.input}`} type="password" name="password-repeat" placeholder="&ExaMplE123+" onChange={handleValueChange("passwordRepeat")} />
         {errors.passwordRepeatErrors.map((err, idx) => <span key={idx}> {err} </span>)}
 
-        <button onClick={handleButtonClick} disabled={!validated || loading}>Register</button>
+        <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={!validated || loading}>Register</button>
 
         {networkErrors.errors.map((err, idx) => <span key={idx}>{err}</span>)}
       </div>

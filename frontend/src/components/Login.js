@@ -76,7 +76,9 @@ export default function Login(props) {
     <form>
       <ButtonLink to='/' text="Type'n'learn" />
 
-      <div className={`${styles.center} ${styles.column}`}>
+      <div className={`${styles.center} ${styles.column}`} style={{
+        height: "65vh",
+      }}>
         <label className={`${styles.mainText}`} htmlFor="username"><b>Username</b></label>
         <input className={`${styles.input}`} type="text" name="username"  placeholder="Username" onChange={handleValueChange("username")} />
         {values.usernameErrors !== null && values.usernameErrors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}

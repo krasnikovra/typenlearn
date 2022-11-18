@@ -29,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     align-self: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .column {
@@ -79,7 +79,6 @@ body {
 .correct {
     display: inline;
     color: var(--correct-color);
-    //color: #379683;
 }
 
 .default {
