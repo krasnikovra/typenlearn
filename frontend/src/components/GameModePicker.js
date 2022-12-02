@@ -4,6 +4,7 @@ import styles from "./app.module.css";
 import GameModeCard from "./GameModeCard";
 import Game from "./Game";
 import getGameModesRequest from "./api/getGameModes";
+import ButtonLink from './ButtonLink';
 
 export default function GameModePicker(props) {
   const [gameModes, setGameModes] = React.useState(undefined)
@@ -29,6 +30,8 @@ export default function GameModePicker(props) {
   return (
     <Routes>
       <Route exact path={"/"} element={
+      <>
+      <ButtonLink to='/' text="Type'n'learn" />
         <div className={styles.center}>
           {gameModes !== undefined && gameModes.map((gameMode, index) => {
             return (
@@ -39,6 +42,7 @@ export default function GameModePicker(props) {
             )
           })}
         </div>
+        </>
       } />
       <Route path={"/*"} element={<Game />} />
     </Routes>

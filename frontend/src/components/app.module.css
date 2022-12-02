@@ -169,7 +169,7 @@ body {
     margin: 1em;
     color: #EDF5E1;
     background-color: #05386B;
-    font-size: 175%;
+    font-size: 170%;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
     padding: 0.60rem 0.60rem;
@@ -212,6 +212,21 @@ input::placeholder {
     width: 27%;
     height: auto;
 }
+.imgCard {
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+    width: 12%;
+    height: auto;
+}
+
+.imgReg {
+    position: absolute;
+    bottom: 0%;
+    left: 65%;
+    width: 36%;
+    height: auto;
+}
 
 .errText {
     color: #05386B;
@@ -220,18 +235,15 @@ input::placeholder {
     margin-top: 0.3em;
 }
 
-.logo {
-    color: #5CDB95;
-    background-color: #5CDB95;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    position: absolute;
-    top: 3%;
-    left: 3%;
-    font-size: 120%;
-}
-
 .errorTimer {
     color: var(--error-color);
     scale: 125%;
     font-weight: bold;
+}
+
+.logo {
+    position: absolute;
+    bottom: 2%;
+    left: 3%;
+    width: 27%;
 }
