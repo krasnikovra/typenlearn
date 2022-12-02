@@ -8,6 +8,8 @@ export default function HomePage(props) {
     <div className={`${styles.center} ${styles.column}`}>
       <MainHeader text="Type'n'Learn" />
       <ButtonLink to='game' text='Play game' />
+      <ButtonLink to='/register/' text="Registration" />
+
 
         <p>
             <img className={`${styles.imgHome}`} src="https://i.pinimg.com/originals/77/c7/29/77c729fe5d8ea9e1e1e460ef5b515fac.jpg" alt="oops"></img>

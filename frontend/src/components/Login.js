@@ -91,9 +91,12 @@ export default function Login(props) {
         <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={loading}>Login</button>
         {values.errors !== null && values.errors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}
 
+        <ButtonLink to='/register' text="Registration" />
+
          <p>
          <img className={`${styles.imgLogin}`} src="https://i.pinimg.com/564x/27/7a/fc/277afc2e1fb0a00d579186e3082464a5.jpg" alt="oops"></img>
          </p>
+
       </div>
     </form>
   )

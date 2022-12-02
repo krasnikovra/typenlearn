@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import postRegisterRequest from './api/postRegisterRequest';
 
 import styles from "./app.module.css";
+import ButtonLink from './ButtonLink';
 
 export default function Register(props) {
   const isFirstRenderOf = React.useRef({
@@ -217,6 +218,8 @@ export default function Register(props) {
 
   return (
     <form>
+    <ButtonLink to='/' text="Type'n'learn" />
+
       <div className={`${styles.center} ${styles.column}`}>
         <label htmlFor="username" className={`${styles.mainText}`}><b>Username</b></label>
         <input className={`${styles.input}`} type="text" name="username" placeholder="Username" onChange={handleValueChange("username")} />
@@ -241,6 +244,10 @@ export default function Register(props) {
 
         {networkErrors.errors.map((err, idx) => <span key={idx}>{err}</span>)}
       </div>
+
+      <p>
+      <img className={`${styles.imgReg}`} src="https://i.pinimg.com/564x/fe/57/b1/fe57b17b6756d60f5526bd7b8b699817.jpg" alt="oops"></img>
+      </p>
     </form>
   )
 }
