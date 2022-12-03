@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'typenlearn',
         'USER': 'postgres',
-        'PASSWORD': ' ',
+        'PASSWORD': 'gpnb0b',
         'HOST': 'localhost',
         'PORT': '5432',
     }

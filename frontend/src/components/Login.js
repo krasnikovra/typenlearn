@@ -80,22 +80,28 @@ export default function Login(props) {
         height: "65vh",
       }}>
         <label className={`${styles.mainText}`} htmlFor="username"><b>Username</b></label>
-        <input className={`${styles.input}`} type="text" name="username"  placeholder="Username" onChange={handleValueChange("username")} />
+        <input className={`${styles.input}`} type="text" name="username" placeholder="Username" onChange={handleValueChange("username")} />
         {values.usernameErrors !== null && values.usernameErrors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}
 
         <label className={`${styles.mainText}`} htmlFor="password"><b>Password</b></label>
-        <input className={`${styles.input}`} type="password"  name="password" placeholder="Password" onChange={handleValueChange("password")} />
+        <input className={`${styles.input}`} type="password" name="password" placeholder="Password" onChange={handleValueChange("password")} />
         {values.passwordErrors !== null &&
           values.passwordErrors.map((err, idx) => <span className={`${styles.errText}`} key={idx}> {err} </span>)}
 
-        <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={loading}>Login</button>
+        <div style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}>
+          <ButtonLink to={`/register/?next=${next}`} text="Registration" />
+          <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={loading}>Login</button>
+        </div>
+
         {values.errors !== null && values.errors.map((err, idx) => <span className={`${styles.errText}`} key={idx}>{err}</span>)}
 
-        <ButtonLink to='/register' text="Registration" />
-
-         <p>
-         <img className={`${styles.imgLogin}`} src="https://i.pinimg.com/564x/27/7a/fc/277afc2e1fb0a00d579186e3082464a5.jpg" alt="oops"></img>
-         </p>
+        <p>
+          <img className={`${styles.imgLogin}`} src="https://i.pinimg.com/564x/27/7a/fc/277afc2e1fb0a00d579186e3082464a5.jpg" alt="oops"></img>
+        </p>
 
       </div>
     </form>

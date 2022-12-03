@@ -10,6 +10,7 @@ import getTextsRequest from './api/getTexts';
 import postRecordRequest from './api/postRecord';
 import Utils from './utils';
 import LevelWordByWord from './LevelWordByWord';
+import ButtonLink from './ButtonLink';
 
 export default class GameWordByWord extends React.Component {
   constructor(props) {
@@ -155,32 +156,35 @@ export default class GameWordByWord extends React.Component {
 
   render() {
     return (
-      <div className={`${styles.center} ${styles.column}`}>
-        <SecretInput ref={e => this.secretInput = e}
-          onMistake={() => this.timer.increment(1000)} />
-        <LevelWordByWord text={this.state.data.texts !== undefined ? this.state.data.texts[this.state.data.currentTextIndex].text : ""}
-          ref={e => this.levelText = e} />
-        <Timer text="Your time: "
-          ref={e => this.timer = e} />
-        <div hidden={this.state.buttonHidden}
-          className={styles.record}>
-          {this.state.data.recordTextComponent}
+      <>
+        <ButtonLink to='/game' text="Back" />
+        <div className={`${styles.center} ${styles.column}`}>
+          <SecretInput ref={e => this.secretInput = e}
+            onMistake={() => this.timer.increment(1000)} />
+          <LevelWordByWord text={this.state.data.texts !== undefined ? this.state.data.texts[this.state.data.currentTextIndex].text : ""}
+            ref={e => this.levelText = e} />
+          <Timer text="Your time: "
+            ref={e => this.timer = e} />
+          <div hidden={this.state.buttonHidden}
+            className={styles.record}>
+            {this.state.data.recordTextComponent}
+          </div>
+          <Delay seconds={3}
+            text="Game is starting in "
+            ref={e => this.delay = e} />
+          <div>
+            <Button text="<< Previous"
+              onClick={this.__onPrevClick}
+              hidden={this.state.buttonHidden} />
+            <Button text="Start!"
+              onClick={this.__onButtonClick}
+              hidden={this.state.buttonHidden} />
+            <Button text="Next >>"
+              onClick={this.__onNextClick}
+              hidden={this.state.buttonHidden} />
+          </div>
         </div>
-        <Delay seconds={3}
-          text="Game is starting in "
-          ref={e => this.delay = e} />
-        <div>
-          <Button text="<< Previous"
-            onClick={this.__onPrevClick}
-            hidden={this.state.buttonHidden} />
-          <Button text="Start!"
-            onClick={this.__onButtonClick}
-            hidden={this.state.buttonHidden} />
-          <Button text="Next >>"
-            onClick={this.__onNextClick}
-            hidden={this.state.buttonHidden} />
-        </div>
-      </div>
+      </>
     );
   }
 }

@@ -240,9 +240,17 @@ export default function Register(props) {
         <input className={`${styles.input}`} type="password" name="password-repeat" placeholder="&ExaMplE123+" onChange={handleValueChange("passwordRepeat")} />
         {errors.passwordRepeatErrors.map((err, idx) => <span key={idx}> {err} </span>)}
 
-        <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={!validated || loading}>Register</button>
-
+        <div style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}>
+          <ButtonLink to={`/login/?next=${next}`} text="Switch to Login" />
+          <button className={`${styles.btn}`} onClick={handleButtonClick} disabled={!validated || loading}>Register</button>
+        </div>
+        
         {networkErrors.errors.map((err, idx) => <span key={idx}>{err}</span>)}
+
       </div>
 
       <p>
